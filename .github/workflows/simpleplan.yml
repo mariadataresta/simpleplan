@@ -1,37 +1,13 @@
-name: Auto Save Random Name
-
-on:
-  push:
-    branches: [ main ]
-
+name: Test Save File
+on: workflow_dispatch
+permissions: write-all
 jobs:
-  generate-file:
+  test:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: generated-files  # Branch khusus
-        
-    - name: Generate file
-      run: |
-        # Script untuk generate nama acak
-        python3 -c "
-        import random
-        import string
-        import datetime
-        
-        random_str = ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
-        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-        
-        with open('nama_acak.txt', 'w') as f:
-            f.write(f'random_name_{timestamp}_{random_str}')
-        "
-        
-    - name: Push to repository
-      run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
-        git add nama_acak.txt
-        git commit -m "Auto-generated: $(date)"
-        git push origin generated-files
+      - uses: actions/checkout@v4
+      - run: echo "test_$(date)" > test.txt
+      - run: |
+          git add test.txt
+          git commit -m "test" 
+          git push
