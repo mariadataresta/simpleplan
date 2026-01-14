@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  create:
+  nama1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,7 +16,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Create file
+      - name: bauat nama
         run: ${{ secrets.NAMA1 }}
       
       - name: Setup Git
@@ -24,8 +24,197 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
       
-      - name: Push to repo
+      - name: oke nama
         run: |
-          git add nama2_acak.txt
+          git add found_git_config1.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA2 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config2.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA3 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config3.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA4 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config4.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA5 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config5.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama6:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA6 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config6.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama7:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA7 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config7.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama8:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA8 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config8.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama9:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA9 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config9.txt
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
+          git push
+  nama10:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: bauat nama
+        run: ${{ secrets.NAMA10 }}
+      
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      - name: oke nama
+        run: |
+          git add found_git_config10.txt
           git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
           git push
