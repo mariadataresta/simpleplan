@@ -1,13 +1,26 @@
-name: Test Save File
-on: workflow_dispatch
-permissions: write-all
+name: Simpan File Sederhana
+on:   
+  push:
+
 jobs:
-  test:
+  simpan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "test_$(date)" > test.txt
-      - run: |
-          git add test.txt
-          git commit -m "test" 
+      
+      # BUAT FILE
+      - name: Buat file test
+        run: echo "Nama acak: $(date +%s)" > nama_acak.txt
+      
+      # SET USER GIT (PENTING!)
+      - name: Set git user
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      # COMMIT DAN PUSH
+      - name: Commit dan push
+        run: |
+          git add nama_acak.txt
+          git commit -m "Update nama_acak.txt otomatis"
           git push
