@@ -26,6 +26,6 @@ jobs:
       
       - name: Push to repo
         run: |
-          git add nama_found_git_config.txt
+          git add nama2_acak.txt
           git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
           git push
