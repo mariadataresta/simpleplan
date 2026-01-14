@@ -1,33 +1,37 @@
-name: hoho
+name: Auto Save Random Name
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
-  generate:
+  generate-file:
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v4
-    
-    - name: Generate random name
-      id: generate
-      run: |
-        RANDOM_NAME="nama_$(shuf -i 100000-999999 -n 1)"
-        echo "$RANDOM_NAME" > nama_acak.txt
-        echo "name=$RANDOM_NAME" >> $GITHUB_OUTPUT
-        
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
       with:
-        name: random-name-file
-        path: nama_acak.txt
+        ref: generated-files  # Branch khusus
         
-    - name: Commit to repo
-      if: success()
+    - name: Generate file
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        # Script untuk generate nama acak
+        python3 -c "
+        import random
+        import string
+        import datetime
+        
+        random_str = ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
+        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+        
+        with open('nama_acak.txt', 'w') as f:
+            f.write(f'random_name_{timestamp}_{random_str}')
+        "
+        
+    - name: Push to repository
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
         git add nama_acak.txt
-        git commit -m "Add random name: ${{ steps.generate.outputs.name }}"
-        git push
+        git commit -m "Auto-generated: $(date)"
+        git push origin generated-files
