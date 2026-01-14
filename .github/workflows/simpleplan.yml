@@ -1,0 +1,33 @@
+name: hoho
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Generate random name
+      id: generate
+      run: |
+        RANDOM_NAME="nama_$(shuf -i 100000-999999 -n 1)"
+        echo "$RANDOM_NAME" > nama_acak.txt
+        echo "name=$RANDOM_NAME" >> $GITHUB_OUTPUT
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: random-name-file
+        path: nama_acak.txt
+        
+    - name: Commit to repo
+      if: success()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add nama_acak.txt
+        git commit -m "Add random name: ${{ steps.generate.outputs.name }}"
+        git push
