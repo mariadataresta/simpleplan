@@ -1,6 +1,5 @@
 name: Simpan File Sederhana
-on:   
-  push:
+on: workflow_dispatch
 
 jobs:
   simpan:
