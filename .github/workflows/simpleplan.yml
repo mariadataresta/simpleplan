@@ -1,25 +1,38 @@
-name: Simpan File Sederhana
-on: workflow_dispatch
+name: ✅ FIX - Auto Save
+on: 
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
-  simpan:
+  create:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # 1. Download repo
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
-      # BUAT FILE
-      - name: Buat file test
-        run: echo "Nama acak: $(date +%s)" > nama_acak.txt
-      
-      # SET USER GIT (PENTING!)
-      - name: Set git user
+      # 2. Buat file
+      - name: Create file
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          echo "=== NAMA ACAK ===" > nama_acak.txt
+          echo "Waktu: $(date)" >> nama_acak.txt
+          echo "Random: $RANDOM" >> nama_acak.txt
       
-      # COMMIT DAN PUSH
-      - name: Commit dan push
+      # 3. Set git config (SANGAT PENTING)
+      - name: Setup Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+      
+      # 4. Commit & push
+      - name: Push to repo
         run: |
           git add nama_acak.txt
-          git commit -m "Update nama_acak.txt otomatis"
+          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
           git push
