@@ -1,229 +1,66 @@
-name: HRTG
-on: 
-  workflow_dispatch:
+name: my-code-server
+
+on:   
   push:
-    branches: [ main ]
-
-permissions:
-  contents: write
-
 jobs:
-  nama1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build1:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA1 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config1.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama2:
-    needs: [nama1]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build2:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA2 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config2.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama3:
-    needs: [nama2]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build3:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA3 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config3.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama4:
-    needs: [nama3]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build4:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA4 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config4.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama5:
-    needs: [nama4]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build5:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA5 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config5.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama6:
-    needs: [nama5]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build6:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA6 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config6.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama7:
-    needs: [nama6]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build7:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA7 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config7.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama8:
-    needs: [nama7]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build8:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA8 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config8.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama9:
-    needs: [nama8]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build9:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA9 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config9.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
-  nama10:
-    needs: [nama9]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SILENT }}
-      
-      - name: buat nama
+  build10:
+    runs-on: ubuntu-24.04
+    steps: 
+      - name: build-code-server
+        continue-on-error: true
         run: ${{ secrets.NAMA10 }}
-      
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Action"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: oke nama
-        run: |
-          git add found_git_config10.txt
-          git commit -m "🔄 Update otomatis $(date '+%d-%m-%Y %H:%M')" 
-          git push
+        
