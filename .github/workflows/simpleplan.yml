@@ -1,5 +1,4 @@
 name: HRTG
-
 on: 
   workflow_dispatch:
   push:
